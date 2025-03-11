@@ -1,0 +1,158 @@
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+        gap: 3em;
+    }
+
+    .home-content h1 {
+        font-size: 50px;
+    }
+
+    .img-box img {
+        width: 400px;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 3em;
+    }
+
+    .about-img img {
+        width: 350px;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+        color: white;
+        margin-right: 20px;
+    }
+
+    .contact-form form {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 15px 5%;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .img-box img {
+        width: 300px;
+    }
+
+    .about-img img {
+        width: 280px;
+    }
+
+    .btn-1,
+    .btn-2 {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+
+    .footer ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer ul li {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-card {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .services h1 {
+        font-size: 24px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .resume {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p,
+    li {
+        font-size: 1em;
+    }
+}

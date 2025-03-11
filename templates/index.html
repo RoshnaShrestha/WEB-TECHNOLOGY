@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personal Portfolio</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='responsive.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+	<header class="header">
+		<a href="#home" class="logo"><span>Ros</span>hna</a>
+		<nav class="navbar">
+			<a href="#home">Home</a>
+			<a href="#about">About Me</a>
+			<a href="#services">Services</a>
+			<a href="#resume">Resume</a>
+		</nav>
+		<a href="#contact" class="contact">Contact Me</a>
+	</header>
+
+	<section id="home" class="home">
+		<div class="home-content">
+			<h3>Hi</h3>
+			<h1>I'm <span>Roshna Shrestha</span></h1>
+			<h4>A Web Developer</h4>
+			<p>I'm from Kathmandu.</p>
+			<div class="btn-box">
+				<a href="#contact" class="btn-1">Hire Me</a>
+				<a href="resume.pdf" download class="btn-2">Download Resume</a>
+			</div>
+		</div>
+		<div class="img-box">
+			<img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Profile Image">
+		</div>
+	</section>
+
+	<section id="about" class="about">
+		<div class="about-img">
+			<img src="{{ url_for('static', filename='images/image1.jpg') }}" alt="About Me Image">
+		</div>
+		<div class="about-content">
+			<h2 class="heading">About <span>Me</span></h2>
+			<p>Hi! I'm Roshna Shrestha, a web developer with a background in IT/Computer Science.
+				My expertise includes HTML, CSS, and Javascript along with frameworks like
+				React and Angular with 3 years of experience. I focus on enhancing user experience
+				by ensuring responsiveness, accessibility, and seamless interaction across various devices and browsers.
+			</p>
+			<div class="tabs__btns">
+				<span class="tabs__btn tab__active" data-target="#skills">Main Skills</span>
+				<span class="tabs__btn" data-target="#experience">Experience</span>
+				<span class="tabs__btn" data-target="#education">Education & Certification</span>
+			</div>
+			<div class="tabs__content">
+				<div class="tabs__items tab__active" data-content id="skills">
+					<div class="tabs__data grid">
+						<p class="tabs__description">
+							<span>Backend</span>- Python, C, Java.
+							<span>Code smarter, not harder.</span>
+						</p>
+						<p class="tabs__description">
+							<span>Frontend </span> -HTML, CSS, Bootstrap
+							<span>Structures content, styles, interactive.</span>
+						</p>
+						<p class="tabs__description">
+							<span>Web and user interface design</span>- Development
+							<span>Websites, web experience.</span>
+						</p>
+					</div>
+				</div>
+				<div class="tabs__items" data-content id="experience">
+					<div class="tabs__data grid">
+						<p class="tabs__description">
+							<span>Web Design</span>- Using HTML, CSS, JavaScript
+							<span>2024</span>
+						</p>
+						<p class="tabs__description">
+							<span>Python Projects </span> -
+							<span>2025</span>
+						</p>
+						<p class="tabs__description">
+							<span>Web Design </span>- WordPress
+							<span>2025</span>
+						</p>
+					</div>
+				</div>
+				<div class="tabs__items" data-content id="education">
+					<div class="tabs__data grid">
+						<p class="tabs__description">
+							<span>BIT</span>- Texas College of Management and IT
+							<span>2023</span>
+						</p>
+						<p class="tabs__description">
+							<span>Advanced Course in Computer Science </span> - CISCO Networking Academy
+							<span>2022</span>
+						</p>
+						<p class="tabs__description">
+							<span>Graphic Designer</span>- Adobe Certified
+							<span>2023</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="services" class="services">
+		<h2>Services</h2>
+		<h1>Delivering a Variety of Digital Solutions</h1>
+
+		<div class="services-container">
+			<div class="service-card">
+				<img src="{{ url_for('static', filename='images/imagede.jpg') }}" alt="Web Design">
+				<h3>Efficient Debugging & Optimization</h3>
+				<p>I have a keen eye for detecting and fixing errors in web applications, ensuring smooth performance
+					and clean code. With expertise in debugging techniques and tools, I optimize websites for speed,
+					accessibility, and seamless user interactions. My skills in HTML, CSS, JavaScript, and Bootstrap
+					help maintain error-free, efficient web solutions.</p>
+			</div>
+
+			<div class="service-card">
+				<img src="{{ url_for('static', filename='images/Dev.jpg') }}" alt="Web Development">
+				<h3>Creative Web Design</h3>
+				<p>I specialize in developing visually appealing, easy-to-navigate websites that embrace modern UI/UX
+					trends. My designs prioritize responsiveness, efficiency, and an intuitive user experience. Using
+					tools like HTML, CSS, JavaScript, and Bootstrap, I craft web pages that captivate and engage users.
+				</p>
+			</div>
+
+			<div class="service-card">
+				<img src="{{ url_for('static', filename='images/imagedebug.jpg') }}" alt="Debugging">
+				<h3>Dynamic Web Development</h3>
+				<p>As a dedicated web developer, I build interactive, high-performing, and responsive websites tailored
+					to different needs, including portfolios, online stores, and business sites. By leveraging
+					technologies like HTML, CSS, JavaScript, and Bootstrap, I ensure seamless functionality across all
+					devices.</p>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="resume" class="resume">
+		<h2 class="heading">My <span>Resume</span></h2>
+		<div class="resume-content">
+			<header>
+				<h1>Roshna Shrestha</h1>
+				<p>Contact: 9803589813 | Email: stharoshna004@gmail.com | Gokarneshowr, Kathmandu</p>
+			</header>
+
+			<section class="profile">
+				<h2>Profile Summary</h2>
+				<p>Results-driven Python Developer with expertise in backend development, data analysis, web scraping,
+					and automation. Proficient in Python, NumPy, Pandas, SQL, and Flask with experience in API
+					development and working with databases. Passionate about writing clean and efficient code, with a
+					focus on problem-solving and algorithm optimization. Seeking to leverage my technical skills in a
+					dynamic environment to contribute to impactful projects.</p>
+			</section>
+
+			<section class="education">
+				<h2>Education</h2>
+				<ul>
+					<li><strong>Texas College of Management and IT</strong> (2080-2081 BS) - Bachelor's of Information
+						Technology</li>
+					<li><strong>Reliance International Academy</strong> (2079-2080 BS) - +2 - GPA: 3.59</li>
+					<li><strong>Uttar Bahini Boarding School</strong> (2077 BS) - SLC - GPA: 3.75</li>
+				</ul>
+			</section>
+
+			<section class="skills">
+				<h2>Skills</h2>
+				<ul>
+					<li><strong>Programming:</strong> Python, C, Java</li>
+					<li><strong>Web Development:</strong> HTML, CSS, WordPress, Bootstrap</li>
+					<li><strong>Tools:</strong> Photoshop, Visual Studio Code, Git</li>
+					<li><strong>Databases:</strong> SQLite, MySQL, PostgreSQL</li>
+					<li><strong>Others:</strong> API Integration, RESTful Services</li>
+				</ul>
+			</section>
+
+			<section class="experience">
+				<h2>Experience</h2>
+				<ul>
+					<li><strong>Web Design</strong> - Using HTML, CSS, JavaScript - <span>2024</span></li>
+					<li><strong>Python Developer</strong> - Various Python Projects, Web Scraping, Automation -
+						<span>2025</span>
+					</li>
+					<li><strong>WordPress Developer</strong> - Building and Customizing WordPress Websites -
+						<span>2025</span>
+					</li>
+				</ul>
+			</section>
+
+			<section class="certificates">
+				<h2>Certificates</h2>
+				<ul>
+					<li>IoT and Robotics Workshop</li>
+					<li>Advanced Course in Computer Science - CISCO Networking Academy</li>
+					<li>Graphic Designer - Adobe Certified</li>
+				</ul>
+			</section>
+
+			<section class="projects">
+				<h2>Projects</h2>
+				<ul>
+					<li><strong>Stock Market Analyzer & Automated Report Generator</strong> - A Python-based system that
+						scrapes Nepse stock data, analyzes trends using Pandas & NumPy, visualizes insights with
+						Matplotlib, and sends automated email reports. Stores historical data in SQLite and can be
+						enhanced with sentiment analysis or machine learning for predictions. <a
+							href="https://github.com/RoshnaShrestha" target="_blank">GitHub Repository</a></li>
+				</ul>
+			</section>
+		</div>
+	</section>
+
+	<section id="contact" class="contact-form">
+		<h2 class="contact-me">Contact <span>Me</span></h2>
+		<form name="submit-to-google-sheet">
+			<div class="input-box">
+				<input type="text" name="Name" placeholder="Full Name">
+				<input type="email" name="Email" placeholder="Email">
+			</div>
+			<div class="input-box">
+				<input type="number" name="Phone number" placeholder="Phone number">
+			</div>
+			<textarea name="Message" cols="30" rows="10" placeholder="Your Message"></textarea>
+			<input type="submit" value="Send Message" class="btn-1">
+		</form>
+		<span id="msg"></span>
+	</section>
+
+	<footer class="footer">
+		<div class="social">
+			<a href="https://www.linkedin.com/in/roshna-shrestha-659435341/" target="_blank"><i
+					class="fa-brands fa-linkedin"></i></a>
+			<a href="https://www.facebook.com/shrestha.jenny.90" target="_blank"><i
+					class="fa-brands fa-facebook"></i></a>
+			<a href="https://github.com/RoshnaShrestha" target="_blank"><i class="fa-brands fa-github"></i></a>
+			<a href="https://www.instagram.com/roshhnnaa_?igsh=MXd4Z25sYTJxZWQ0eQ%3D%3D" target="_blank"><i
+					class="fa-brands fa-instagram"></i></a>
+		</div>
+		<ul class="list">
+			<li><a href="#">FAQ</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#about">About Me</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="#">Privacy Policy</a></li>
+		</ul>
+	</footer>
+	<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+
+</html>
