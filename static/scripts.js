@@ -3,6 +3,67 @@ document.addEventListener("DOMContentLoaded", function () {
     // You can add interactivity here
 });
 
+//nav
+document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navbar a");
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+            navLinks.forEach((nav) => nav.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+});
+//contact 
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar a, .contact");
+
+    function setActiveLink(id) {
+        navLinks.forEach((nav) => nav.classList.remove("active"));
+        const activeLink = document.querySelector(`.navbar a[href="#${id}"], .contact[href="#${id}"]`);
+        if (activeLink) {
+            activeLink.classList.add("active");
+        }
+    }
+
+    function updateActiveLinkOnScroll() {
+        let currentSection = "";
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 150;
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.getAttribute("id");
+            }
+        });
+
+        if (currentSection) {
+            setActiveLink(currentSection);
+        }
+    }
+
+    window.addEventListener("scroll", updateActiveLinkOnScroll);
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: "smooth"
+                });
+                setActiveLink(targetId);
+            }
+        });
+    });
+
+    updateActiveLinkOnScroll();
+});
+
+
+
 //ABOUT TABS:
 const tabs = document.querySelectorAll('[data-target]'),
     tabContents = document.querySelectorAll('[data-content]');
