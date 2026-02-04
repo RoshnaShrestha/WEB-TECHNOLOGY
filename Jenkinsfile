@@ -4,60 +4,38 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Pulls the latest code from your GitHub branch
                 checkout scm
-                echo 'Successfully pulled code from GitHub.'
+                echo 'Code pulled successfully.'
             }
         }
 
-        stage('Project Structure Check') {
+        stage('List Files') {
             steps {
-                // This lists your files in the logs so you can see them
-                echo 'Listing files in the current workspace:'
+                // This will show your files in the Jenkins console
                 sh 'ls -R'
             }
         }
 
-        stage('Prepare Environment') {
+        stage('Build') {
             steps {
-                echo 'Setting up virtual environment...'
-                // This creates a virtual env and installs requirements if you have them
-                sh '''
-                    python3 -m venv venv
-                    . venv/bin/activate
-                    if [ -f requirements.txt ]; then
-                        pip install -r requirements.txt
-                    else
-                        echo "No requirements.txt found, skipping pip install."
-                    fi
-                '''
+                echo 'Building the project...'
+                // Add build commands here if needed
             }
         }
 
-        stage('Verify Templates') {
+        stage('Test') {
             steps {
-                // Checks if your index.html exists in the templates folder
-                sh 'test -f templates/index.html && echo "Template found!" || echo "Template MISSING!"'
-            }
-        }
-
-        stage('Deploy / Run') {
-            steps {
-                echo 'Your app is ready for deployment.'
-                // In a real scenario, you would restart your service here
-                // sh 'systemctl restart my_web_app'
+                echo 'Running tests...'
             }
         }
     }
 
     post {
-        always {
-            echo 'Pipeline execution finished.'
-        }
         success {
-            echo 'Build and Test was successful!'
+            echo 'Pipeline finished successfully!'
         }
         failure {
-            echo 'Something went wrong. Check the logs above.'
+            echo 'Pipeline failed. Check for syntax errors.'
         }
     }
+}
