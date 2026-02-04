@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout Code') {
             steps {
                 git branch: 'master',
@@ -19,29 +20,26 @@ pipeline {
             steps {
                 sh '''
                 if [ -f requirements.txt ]; then
-                    pip install -r requirements.txt
+                    pip3 install -r requirements.txt
                 else
-                    echo "No requirements.txt found"
+                    pip3 install flask
                 fi
                 '''
             }
         }
 
-        stage('Run Python Script') {
+        stage('Run Flask App') {
             steps {
                 sh '''
-                if [ -f app.py ]; then
-                    python app.py
-                else
-                    echo "No Python app to run"
-                fi
+                echo "Starting Flask app..."
+                nohup python app.py > app.log 2>&1 &
                 '''
             }
         }
 
         stage('Frontend Check') {
             steps {
-                echo 'HTML / CSS / JS files ready for deployment'
+                echo 'HTML, CSS, and JavaScript files are ready'
             }
         }
     }
